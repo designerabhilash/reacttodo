@@ -47,16 +47,18 @@
 .addinput .btn svg {
   font-size: 30px;
 }
-.listing {
+/* .listing {
   height: 290px;
   overflow-y: scroll;
   width: 100%;
   overflow-x: hidden;
-} 
+}  */
 .listeditems {
   border-bottom: 1px solid #ccc;
   padding-bottom: 8px;
   padding-top: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .listeditems:last-child {
   border-bottom: none;
