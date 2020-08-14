@@ -17,7 +17,6 @@ const Todolist = (props) => {
             <input
               className="form-check-input"
               type="radio"
-              id="listitem"
               onClick={cutItem}
               value={line}
             />
@@ -26,7 +25,6 @@ const Todolist = (props) => {
         <div className="col-8 col-sm-9">
           <label
             className="form-check-label text-capitalize"
-            htmlFor="listitem"
             style={{ textDecoration: line ? "line-through" : null }}
           >
             {props.text}
