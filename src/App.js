@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect,useState } from "react";
 import "./App.css";
 import Todolist from './Todolist'
+
+const LOCAL_STORAGE_KEY = "reacttodo"
 
 function App() {
   const[items, updateItems] = useState("");
   const[addList, updateAddList] = useState([]);
+
+  useEffect(() => {
+    const storageItems = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
+      if (storageItems) {
+        updateAddList(storageItems)
+      }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(addList));
+  }, [addList])
 
   const inputItems = (e) => {
     updateItems(e.target.value)
@@ -20,7 +33,7 @@ function App() {
   const deleteItem = (id) => {
     updateAddList((previtem) => {
       return previtem.filter((arrElem, index) => {
-        return index !== id;
+        return index !== id
       });
     });
   };
