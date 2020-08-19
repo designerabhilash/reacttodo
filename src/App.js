@@ -23,8 +23,12 @@ function App() {
     updateItems(e.target.value)
   };
 
-  const addItem = () => {
-    updateAddList((previtem) => {
+  const addItem = (e) => {
+    if(e.target.value === undefined){
+      alert('todo value is empty');
+      return;
+    }
+    updateAddList((previtem) => { 
       return [...previtem, items]
     });
     updateItems("");
@@ -53,6 +57,7 @@ function App() {
                     placeholder="Enter an item"
                     onChange={inputItems}
                     value={items}
+                    required
                   />
                   <button 
                     className="btn btn-primary"
