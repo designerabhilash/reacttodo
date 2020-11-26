@@ -24,7 +24,7 @@ function App() {
   };
 
   const addItem = (e) => {
-    if(e.target.value === undefined){
+    if(e.target.value === ''){
       alert('todo value is empty');
       return;
     }
